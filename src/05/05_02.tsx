@@ -7,3 +7,10 @@ export const getStreetsTitlesOfGovernmentBuildings = (buildings: GovernmentBuild
 export const getStreetsTitlesOfHouses = (houses: HouseType[]) => {
     return houses.map(b => b.address.street)
 }
+
+export function createMessages(houses: HouseType[]) {
+
+    let callbackfn = (h: HouseType) => `Hello guys from ${h.address.street.title}`;
+
+    return houses.map(callbackfn);
+}
